@@ -1,0 +1,8 @@
+curl -X POST -H "Content-Type:application/x-www-form-urlencoded" -H "Authorization:Basic eXg0OTMwNDpDaXRpYmFuazIwMTQ=" --data "grant_type=client_credentials" http://localhost:3000/oauth/token
+
+
+a2V2aW46Q2l0aWJhbmsyMDE0
+
+curl -X POST -H "Content-Type:application/x-www-form-urlencoded" -H "Authorization:Basic a2V2aW46Q2l0aWJhbmsyMDE0" --data "grant_type=client_credentials" http://localhost:3000/oauth/token
+
+curl -X GET -H "Authorization:Bearer EQrQ6fUKcPt5HiIKdyser6fCbvnLy9mwWPW455V1bvielOIA0ZDzHSk0LElZRkcSVPuOvqXj0FmRtu2DMG5hv9SDCL2i7It8SUIkYnjB9ffuO0N8lLI2BavhWVPSQDGnvPcyHodkkVuSezYNtildeVJF6kGbhWrwQm4O0QrjynOJkXSfmzgfoAVQ10rpmwIaPEdKoKmJ2vs4TUMQOs8azv2CoeFr387rD5j6X78ERstE4VWKQR1ymodErSh4bDER" http://localhost:3000/api/clientinfo

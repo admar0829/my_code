@@ -1,0 +1,31 @@
+var clients = [
+    { id: '1', name: 'client_1', clientId: 'client_1', clientSecret: 'Citibank2014' },
+    { id: '2', name: 'client_1', clientId: 'client_2', clientSecret: 'Citigroup2014' }
+];
+Y2xpZW50XzE6Q2l0aWJhbmsyMDE0
+Y2xpZW50XzI6Q2l0aWdyb3VwMjAxNA==
+
+
+var users = [
+    { id: '1', username: 'Kevin', password: 'password', name: 'Yuwei Xia' },
+    { id: '2', username: 'Chris', password: 'password', name: 'Christopher Lawless' }
+];
+
+//authorization code
+
+
+
+
+
+//password
+curl -X POST -H "Content-Type:application/x-www-form-urlencoded" -H "Authorization:Basic Y2xpZW50XzE6Q2l0aWJhbmsyMDE0" --data "grant_type=password&username=Kevin&password=password&scope=normal" http://localhost:3000/oauth/token
+
+
+
+//client credential
+curl -X POST -H "Content-Type:application/x-www-form-urlencoded" -H "Authorization:Basic a2V2aW46Q2l0aWJhbmsyMDE0" --data "grant_type=client_credentials&scope=normal" http://localhost:3000/oauth/token
+
+curl -X GET -H "Authorization:Bearer txuokwskhbKejJIGpM7Yc4VieBt5mHqAipQ7Vd7Z2tiEOQxbgWBgi6rx1TpKI0y53nzsJiaPymvRNK16YWmoRBgUqI060MHvj8DWJJqoMv0Yqrs5Gq8pzxlC5kYGvbaI8GfrIt7e1mXmXvSX2yubFz1OGoHyMXlA64p6Rtk4DYRa4Gfa1w2RtlQn4A6OHX5E2oLqups0sG8cuuZnkUjEpwzZGmH6alzCky1guDhYbtQRCeM3NxCrNZVvGkuXUfYU" http://localhost:3000/api/clientinfo
+
+
+curl -X GET -H "Authorization:Bearer 1iZUUkSiPKQ6j1achC2fDHHwnUsytCrh9sNCw7dKPsYd0WtaeiTYPs2fVbaS6Ue5JC5GBUUkwQOgcpwKW0dsdSR7UBjTe5aj0aEdLCu8cXKIk7mRpqMMhxSeAH5HVQqJ2Nnfdn93Q0Ejg6VgyEEDqiOLV69UUNBYUybmFexcaKrtNq7yQF1sNjxQdxmpAefDBxuXcZSO7kzbDJRrnFn7A9WV6gvuAuf2jq2Twlz6mYetPjzPdGWxnOzSa5gDtBTB" http://localhost:3000/api/userinfo

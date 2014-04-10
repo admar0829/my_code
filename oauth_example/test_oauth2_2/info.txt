@@ -1,0 +1,49 @@
+var clients = [
+    { id: '1', name: 'client_1', clientId: 'client_1', clientSecret: 'Citibank2014' },
+    { id: '2', name: 'client_1', clientId: 'client_2', clientSecret: 'Citigroup2014' }
+];
+Y2xpZW50XzE6Q2l0aWJhbmsyMDE0
+Y2xpZW50XzI6Q2l0aWdyb3VwMjAxNA==
+
+
+var users = [
+    { id: '1', username: 'Kevin', password: 'password', name: 'Yuwei Xia' },
+    { id: '2', username: 'Chris', password: 'password', name: 'Christopher Lawless' }
+];
+
+//authorization code
+
+//use a browser, login, and request:
+
+http://localhost:3000/dialog/authorize?redirect_uri=http://localhost:3000&response_type=code&client_id=abc123
+
+http://localhost:3000/dialog/authorize?redirect_uri=http://localhost:3000&response_type=code&client_id=client_1
+
+will return
+
+http://localhost:3000?code=<code>
+
+
+curl -X POST -H "Content-Type:application/x-www-form-urlencoded" -H "Authorization:Basic Y2xpZW50XzE6Q2l0aWJhbmsyMDE0" --data "grant_type=authorization_code&redirect_uri=http://localhost:3000&client_id=abc123&code=1JWmlUtKY2vpX4rY" http://localhost:3000/oauth/token
+
+
+//implicit
+
+http://localhost:3000/dialog/authorize?redirect_uri=http://localhost:3000&response_type=token&client_id=client_1
+
+
+
+
+
+//password
+curl -X POST -H "Content-Type:application/x-www-form-urlencoded" -H "Authorization:Basic Y2xpZW50XzE6Q2l0aWJhbmsyMDE0" --data "grant_type=password&username=Kevin&password=password&scope=normal" http://localhost:3000/oauth/token
+
+
+
+//client credential
+curl -X POST -H "Content-Type:application/x-www-form-urlencoded" -H "Authorization:Basic a2V2aW46Q2l0aWJhbmsyMDE0" --data "grant_type=client_credentials&scope=normal" http://localhost:3000/oauth/token
+
+curl -X GET -H "Authorization:Bearer txuokwskhbKejJIGpM7Yc4VieBt5mHqAipQ7Vd7Z2tiEOQxbgWBgi6rx1TpKI0y53nzsJiaPymvRNK16YWmoRBgUqI060MHvj8DWJJqoMv0Yqrs5Gq8pzxlC5kYGvbaI8GfrIt7e1mXmXvSX2yubFz1OGoHyMXlA64p6Rtk4DYRa4Gfa1w2RtlQn4A6OHX5E2oLqups0sG8cuuZnkUjEpwzZGmH6alzCky1guDhYbtQRCeM3NxCrNZVvGkuXUfYU" http://localhost:3000/api/clientinfo
+
+
+curl -X GET -H "Authorization:Bearer wbex7hfvCAECeObFDfGezXWmbXojhRMLQwgoONWyOx3H3GWXDJ7PZjPRy577cEiCnEQQn7LdkxVE2Wj08rnECVDxHFoaqnqjnkp51XpncbGbHUVQQvtI70UcUODfnYnOC0YI8y0TRwH6MPYsnOGThxPCohxpEk7MVPURArZoyIC64iLqmSsw1CkTjtakGZPLeafmAmDz9SRAWMBoe5U5n2wvdpmpB187H2g4wpEww7OSYLLpEamXclOrXGSWXuMZ" http://localhost:3000/api/userinfo
